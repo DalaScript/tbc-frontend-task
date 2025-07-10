@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../assets/styles/styles-update.css">
+</head>
+<body>
+    <main class="dashboard">
+        <h1 class="dashboard__title">Dashboard</h1>
+
+        <!-- Accounts Section -->
+        <section class="accounts-section">
+            <header class="accounts-section__header">
+                <h2 class="accounts-section__title">Accounts</h2>
+                <div class="accounts-section__balance">
+                    <i class="fa-solid fa-wallet"></i>
+                    <div class="accounts-section__balance-details">
+                        <p class="accounts-section__label">Total Available:</p>
+                        <p class="accounts-section__amount">$4,836</p>
+                    </div>
+                </div>
+            </header>
+
+            <ul class="accounts-section__cards-list">
+                <li class="accounts-section__cards-item">
+                    <article class="card">
+                        <div class="card__logo">
+                            <img class="card__img" src="../assets/images/visa-logo.png" alt="Visa Card logo">
+                        </div>
+                        <p class="card__type">VISA</p>
+                        <span class="card__amount">$1336</span>
+                    </article>
+                </li>
+                <li class="accounts-section__cards-item">
+                    <article class="card">
+                        <div class="card__logo">
+                            <img class="card__img" src="../assets/images/mastercard-logo.png" alt="MasterCard logo">
+                        </div>
+                        <p class="card__type">MasterCard</p>
+                        <span class="card__amount">$500</span>
+                    </article>
+                </li>
+                <li class="accounts-section__cards-item">
+                    <article class="card">
+                        <div class="card__logo card__logo--savings">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                        </div>
+                        <p class="card__type">Savings</p>
+                        <span class="card__amount">$2000</span>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Transactions Section -->
+        <section class="transactions-section">
+            <header class="transactions-section__header">
+                <h2 class="transactions-section__title">Last Transactions</h2>
+                <a href="#" class="transactions-section__link">
+                    View All <i class="fa-solid fa-caret-right"></i>
+                </a>
+            </header>
+
+            <ul class="transactions-section__list">
+                <li class="transaction">
+                    <img src="../assets/images/avatars/emma-richardson.jpg" alt="Emma Richardson avatar" class="transaction__avatar">
+                    <p class="transaction__name">Emma Richardson</p>
+                    <div class="transaction__details">
+                        <p class="transaction__amount transaction__amount--positive">+$75.50</p>
+                        <time datetime="2024-08-19" class="transaction__date">19 Aug 2024</time>
+                    </div>
+                </li>
+                <li class="transaction">
+                    <img src="../assets/images/avatars/savory-bites-bistro.jpg" alt="Savory Bites Bistro avatar" class="transaction__avatar">
+                    <p class="transaction__name">Savory Bites Bistro</p>
+                    <div class="transaction__details">
+                        <p class="transaction__amount">-$55.50</p>
+                        <time datetime="2024-08-19" class="transaction__date">19 Aug 2024</time>
+                    </div>
+                </li>
+                <li class="transaction">
+                    <img src="../assets/images/avatars/daniel-carter.jpg" alt="Daniel Carter avatar" class="transaction__avatar">
+                    <p class="transaction__name">Daniel Carter</p>
+                    <div class="transaction__details">
+                        <p class="transaction__amount">-$42.30</p>
+                        <time datetime="2024-08-18" class="transaction__date">18 Aug 2024</time>
+                    </div>
+                </li>
+                <li class="transaction">
+                    <img src="../assets/images/avatars/sun-park.jpg" alt="Sun Park avatar" class="transaction__avatar">
+                    <p class="transaction__name">Sun Park</p>
+                    <div class="transaction__details">
+                        <p class="transaction__amount transaction__amount--positive">+$120.00</p>
+                        <time datetime="2024-08-17" class="transaction__date">17 Aug 2024</time>
+                    </div>
+                </li>
+                <li class="transaction">
+                    <img src="../assets/images/avatars/urban-services-hub.jpg" alt="Urban Services Hub avatar" class="transaction__avatar">
+                    <p class="transaction__name">Urban Services Hub</p>
+                    <div class="transaction__details">
+                        <p class="transaction__amount">-$65.00</p>
+                        <time datetime="2024-08-17" class="transaction__date">17 Aug 2024</time>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
