@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* || variables
+ *************************/
+:root {
+    /* Light Mode
+     *************************/
+    /* Primary */
+    --primary-highlight: #7B57E0;
+    /* Grays */
+    --black: #000000;
+    /* Stroke */
+    --stroke: #DCDCDD;
+    /* BG */
+    --bg: #F1F3F4;
+    /* Dash */
+    --gray-3: #DCE3EB;
+    /* Unit BG */
+    --unit-bg: #FFFFFF;
+
+    /* Additional
+     *************************/
+    --green: #50C099;
+    --blue: #5DAAEE;
+    --yellow: #FFC565;
+    --salmon: #F9837C;
+
+    /* Typography
+     *************************/
+    --primary-base: #2B2E48;
+    --secondary-base: #7D7D7D;
+    --error: #C71026;
+    --success: #0B8A00;
+}
+
+/* || 
+ *************************/
+
+/* || reset
+ *************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: 'Public Sans', sans-serif;
+}
+
+main {
+    padding: 24px 16px;
+}
+
+li {
+    list-style: none;
+}
+
+/* || dashboard title
+ *************************/
+.dashboard__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    color: var(--primary-base);
+}
+
+/* || accounts section
+ *************************/
+.accounts-section {
+    margin-top: 32px;
+    padding: 24px 20px;
+    border-radius: 12px;
+    background-color: var(--unit-bg);
+}
+
+.accounts-section__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;
+    color: var(--primary-base);
+}
+
+.accounts-section__balance {
+    margin: 20px 0;
+    padding-left: 16px;
+    height: 110px;
+
+    border-radius: 12px;
+    background-color: var(--bg);
+
+    display: flex;
+    align-items: center;
+}
+
+.accounts-section__balance i {
+    font-size: 40px;
+    color: var(--primary-base);
+}
+
+.accounts-section__balance-details {
+    margin-left: 16px;
+}
+
+.accounts-section__label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--secondary-base);
+}
+
+.accounts-section__amount {
+    margin-top: 11px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    color: var(--primary-base);
+}
+
+/* || card (bank cards)
+ *************************/
+.accounts-section__cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.accounts-section__cards-item {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--stroke);
+}
+
+.accounts-section__cards-item:last-child {
+    padding-bottom:0;
+    border-bottom: none;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+}
+
+.card__logo {
+    width: 45px;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__logo--savings {
+    background-color: var(--bg);
+}
+
+.card__logo--savings i {
+    font-size: 20px;
+    color: var(--blue);
+}
+
+.card__img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.card__type {
+    margin-left: 16px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--secondary-base);
+}
+
+.card__amount {
+    margin-left: auto;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 150%;
+    color: var(--primary-base);
+}
+
+/* || TRANSACTION SECTION
+ *************************/
+.transactions-section {
+    margin-top: 32px;
+    padding: 24px 20px;
+    border-radius: 12px;
+
+    background-color: var(--unit-bg);
+}
+
+.transactions-section__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.transactions-section__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;
+    color: var(--primary-base);
+}
+
+.transactions-section__link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--secondary-base);
+}
+
+.transactions-section__link i {
+    margin-left: 16px;
+}
+
+.transactions-section__list {
+    margin-top: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* || TRANSACTION ITEM
+ *************************/
+.transaction {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--stroke);
+    
+    display: flex;
+    align-items: center;
+}
+
+.transaction:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.transaction__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.transaction__name {
+    margin-left: 16px;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 150%;
+    color: var(--primary-base);
+}
+
+.transaction__details {
+    margin-left: auto;
+    text-align: right;
+}
+
+.transaction__amount {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 150%;
+    color: var(--primary-base);
+}
+
+.transaction__amount--positive {
+    color: var(--success);
+}
+
+.transaction__date {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--secondary-base);
+}
