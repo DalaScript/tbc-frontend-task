@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
 <body>
-    <main class="dashboard">
-        <h1 class="dashboard__title">Dashboard</h1>
+    <header class="header">
+        <h1 class="header__title">Dashboard</h1>
 
+    </header>
+    <main class="dashboard">
         <!-- Accounts Section -->
-        <section class="accounts-section">
-            <header class="accounts-section__header">
-                <h2 class="accounts-section__title">Accounts</h2>
+        <section class="accounts-section primary-section">
+            <header class="accounts-section__header primary-section__header">
+                <h2 class="accounts-section__title primary-section__title">Accounts</h2>
                 <div class="accounts-section__balance">
                     <i class="fa-solid fa-wallet"></i>
                     <div class="accounts-section__balance-details">
@@ -55,10 +57,68 @@
             </ul>
         </section>
 
+        <!-- Money Spent Section -->
+        <section class="money-spent-section primary-section">
+            <header class="primary-section__header">
+                <h2 class="money-spent-section__title primary-section__title">Money Spent</h2>
+            </header>
+
+            <div class="money-spent-section__chart">
+                <div class="chart">
+                    <div class="chart__inner"></div>
+                    <div class="chart__text-content">
+                        <p class="chart__money-spent">$338</p>
+                        <p class="chart__money-limit">of $975 limit</p>
+                    </div>
+                </div>
+                <div class="data">
+                    <ul class="data__cards-list">
+                        <li class="data__cards-item">
+                            <div class="data-card">
+                                <div class="data-card__horizontal-line data-card__horizontal-line--entertainment"></div>
+                                <div class="data-card__text-content">
+                                    <p class="data-card__title">Entertainment</p>
+                                    <p class="data-card__value">$50.00</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="data__cards-item">
+                            <div class="data-card">
+                                <div class="data-card__horizontal-line data-card__horizontal-line--bills"></div>
+                                <div class="data-card__text-content">
+                                    <p class="data-card__title">Bills</p>
+                                    <p class="data-card__value">$750.00</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="data__cards-item">
+                            <div class="data-card">
+                                <div class="data-card__horizontal-line data-card__horizontal-line--dining-out"></div>
+                                <div class="data-card__text-content">
+                                    <p class="data-card__title">Dining Out</p>
+                                    <p class="data-card__value">$75.00</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="data__cards-item">
+                            <div class="data-card">
+                                <div class="data-card__horizontal-line data-card__horizontal-line--personal-care"></div>
+                                <div class="data-card__text-content">
+                                    <p class="data-card__title">Personal Care</p>
+                                    <p class="data-card__value">$100.00</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Transactions Section -->
-        <section class="transactions-section">
-            <header class="transactions-section__header">
-                <h2 class="transactions-section__title">Last Transactions</h2>
+        <section class="transactions-section primary-section">
+            <header class="transactions-section__header primary-section__header">
+                <h2 class="transactions-section__title primary-section__title">Last Transactions</h2>
                 <a href="#" class="transactions-section__link">
                     View All <i class="fa-solid fa-caret-right"></i>
                 </a>
