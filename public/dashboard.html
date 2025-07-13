@@ -1,39 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../assets/styles/styles.css">
-</head>
-<body>
-    <header class="header">
-        <h1 class="header__title">Dashboard</h1>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/styles/base.css">
+    <link rel="stylesheet" href="../assets/styles/layout.css">
+    <link rel="stylesheet" href="../assets/styles/components.css">
+    <link rel="stylesheet" href="../assets/styles/header-last.css">
+    <link rel="stylesheet" href="../assets/styles/darkmode.css">
+    <link rel="stylesheet" href="../assets/styles/dashboard.css">
+    <link rel="stylesheet" href="../assets/styles/chart.css">
+</head>
+
+<body>
+    <header class="primary-section" id="header">
+        <nav class="nav-bar">
+            <!-- Hamburger Toggle -->
+            <label class="nav-bar__hamburger" for="side-bar-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+
+            <!-- Title -->
+            <h1 class="nav-bar__title text-present-1">Dashboard</h1>
+
+            <!-- User Avatar -->
+            <div class="nav-bar__user">
+                <img class="nav-bar__user-img" src="../assets/images/avatars/nika-dalalishvili.jpg" alt="User Avatar" />
+            </div>
+
+            <!-- Sidebar Toggle Checkbox -->
+            <input class="nav-bar__toggle toggler" id="side-bar-toggle" type="checkbox" />
+
+            <!-- Overlay -->
+            <label class="side-bar__overlay" for="side-bar-toggle"></label>
+
+            <!-- Sidebar -->
+            <aside class="side-bar nav-bar__side-bar">
+                <!-- Close Button -->
+                <label class="side-bar__close" for="side-bar-toggle">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+
+                <ul class="side-bar__list">
+                    <li class="side-bar__item--logo">
+                        <svg class="side-bar__logo" width="122" height="22" viewBox="0 0 122 22" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.192 21.44H2.176V10.24H0V5.312H2.304C2.944 2.272 5.92 0 11.2 0H12.48V4.288H10.24C8.576 4.288 7.776 4.448 7.808 5.312H12.48V10.24H8.192V21.44Z" />
+                            <path d="M20.1047 3.84H14.0887V0H20.1047V3.84ZM20.1047 21.44H14.0887V5.312H20.1047V21.44Z" />
+                            <path
+                                d="M28.3622 21.44H22.3462V5.312H27.9783V10.208H28.2983C28.6502 7.52 30.4103 4.992 34.7303 4.992C39.0823 4.992 41.1302 7.616 41.1302 11.104V21.44H35.1143V13.312C35.1143 11.072 34.2822 10.368 31.6582 10.368C29.0022 10.368 28.3622 11.04 28.3622 13.12V21.44Z" />
+                            <path
+                                d="M48.4447 21.76C44.7967 21.76 42.7487 20.096 42.7487 17.344C42.7487 15.072 44.3167 13.44 47.9647 13.088L54.5247 12.448V12.128C54.5247 10.496 53.8208 10.24 51.6768 10.24C49.6927 10.24 49.0848 10.624 49.0848 11.968V12.096H43.0687V12.032C43.0687 7.744 46.6527 4.992 52.1247 4.992C57.7567 4.992 60.4767 7.744 60.4767 12.256V21.44H54.8447V18.048H54.5247C53.9167 20.32 51.9327 21.76 48.4447 21.76ZM48.7967 16.96C48.7967 17.472 49.3087 17.568 50.2367 17.568C53.1487 17.568 54.3327 17.216 54.4927 15.776L49.5648 16.352C49.0208 16.416 48.7967 16.608 48.7967 16.96Z" />
+                            <path
+                                d="M68.596 21.44H62.58V5.312H68.212V10.208H68.532C68.884 7.52 70.644 4.992 74.964 4.992C79.316 4.992 81.364 7.616 81.364 11.104V21.44H75.348V13.312C75.348 11.072 74.516 10.368 71.892 10.368C69.236 10.368 68.596 11.04 68.596 13.12V21.44Z" />
+                            <path
+                                d="M92.5185 21.76C86.7905 21.76 83.1425 18.592 83.1425 13.376C83.1425 8.128 86.7905 4.992 92.5185 4.992C98.0225 4.992 101.542 7.808 101.542 12.128V12.64H95.5585V12.384C95.5585 10.72 94.3425 10.368 92.3905 10.368C90.1825 10.368 89.1265 10.848 89.1265 13.376C89.1265 15.872 90.1825 16.352 92.3905 16.352C94.3425 16.352 95.5585 16.032 95.5585 14.368V14.08H101.542V14.624C101.542 18.912 98.0225 21.76 92.5185 21.76Z" />
+                            <path
+                                d="M112.462 21.76C106.99 21.76 103.15 19.424 103.15 13.376C103.15 8.128 106.958 4.992 112.334 4.992C117.902 4.992 121.454 7.776 121.454 12.96C121.454 13.504 121.422 13.92 121.358 14.496H108.718C108.814 16.448 109.678 16.992 112.238 16.992C114.67 16.992 115.31 16.576 115.31 15.616V15.264H121.326V15.648C121.326 19.232 117.902 21.76 112.462 21.76ZM112.206 9.6C109.998 9.6 109.07 10.08 108.814 11.456H115.63C115.406 10.08 114.446 9.6 112.206 9.6Z" />
+                        </svg>
+                    </li>
+                    <li class="side-bar__item">
+                        <label for="side-bar-toggle">
+                            <a class="side-bar__link text-present-3 side-bar__link--active">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg> 
+                                <span>Dashboard</span>
+                            </a>
+                        </label>
+                    </li>
+                    <li class="side-bar__item">
+                        <a href="./transactions.html" class="side-bar__link text-present-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M535 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l64 64c4.5 4.5 7 10.6 7 17s-2.5 12.5-7 17l-64 64c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l23-23L384 112c-13.3 0-24-10.7-24-24s10.7-24 24-24l174.1 0L535 41zM105 377l-23 23L256 400c13.3 0 24 10.7 24 24s-10.7 24-24 24L81.9 448l23 23c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L7 441c-4.5-4.5-7-10.6-7-17s2.5-12.5 7-17l64-64c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM96 64l241.9 0c-3.7 7.2-5.9 15.3-5.9 24c0 28.7 23.3 52 52 52l117.4 0c-4 17 .6 35.5 13.8 48.8c20.3 20.3 53.2 20.3 73.5 0L608 169.5 608 384c0 35.3-28.7 64-64 64l-241.9 0c3.7-7.2 5.9-15.3 5.9-24c0-28.7-23.3-52-52-52l-117.4 0c4-17-.6-35.5-13.8-48.8c-20.3-20.3-53.2-20.3-73.5 0L32 342.5 32 128c0-35.3 28.7-64 64-64zm64 64l-64 0 0 64c35.3 0 64-28.7 64-64zM544 320c-35.3 0-64 28.7-64 64l64 0 0-64zM320 352a96 96 0 1 0 0-192 96 96 0 1 0 0 192z"/></svg> 
+                            <span>Transactions</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="side-bar__item">
+                        <input class="toggler" id="darkmode" type="checkbox">
+                        <label for="darkmode" class="theme-switch">
+                            <div class="theme-switch__label">
+                                <div class="theme-switch__circle">
+                                    <svg class="theme-switch__icon theme-switch__icon--sun"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+                                    </svg>
+                                    <svg class="theme-switch__icon theme-switch__icon--moon"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="text-present-3 theme-switch__text theme-switch__text--light">Light Mode</span>
+                            <span class="text-present-3 theme-switch__text theme-switch__text--dark">Dark Mode</span>
+                        </label>
+                    </li>
+                    <li class="side-bar__link" style="display: none;">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right"
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <g>
+                                <path fill="currentColor"
+                                    d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z">
+                                </path>
+                                <path fill="currentColor"
+                                    d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z">
+                                </path>
+                            </g>
+                        </svg>
+                        <span>Minimize Menu</span>
+                    </li>
+                </ul>
+            </aside>
+        </nav>
     </header>
-    <main class="dashboard">
+    <main>
         <!-- Accounts Section -->
         <section class="accounts-section primary-section">
             <header class="accounts-section__header primary-section__header">
-                <h2 class="accounts-section__title primary-section__title">Accounts</h2>
+                <h2 class="accounts-section__title text-present-2">Accounts</h2>
                 <div class="accounts-section__balance">
                     <i class="fa-solid fa-wallet"></i>
                     <div class="accounts-section__balance-details">
-                        <p class="accounts-section__label">Total Available:</p>
-                        <p class="accounts-section__amount">$4,836</p>
+                        <p class="accounts-section__label text-present-4">Total Available: </p>
+                        <p class="accounts-section__amount text-present-1">$4,836</p>
                     </div>
                 </div>
             </header>
-
             <ul class="accounts-section__cards-list">
                 <li class="accounts-section__cards-item">
                     <article class="card">
                         <div class="card__logo">
                             <img class="card__img" src="../assets/images/visa-logo.png" alt="Visa Card logo">
                         </div>
-                        <p class="card__type">VISA</p>
-                        <span class="card__amount">$1336</span>
+                        <p class="card__type text-present-4">VISA</p>
+                        <span class="card__amount text-present-4-bold">$1336</span>
                     </article>
                 </li>
                 <li class="accounts-section__cards-item">
@@ -41,8 +147,8 @@
                         <div class="card__logo">
                             <img class="card__img" src="../assets/images/mastercard-logo.png" alt="MasterCard logo">
                         </div>
-                        <p class="card__type">MasterCard</p>
-                        <span class="card__amount">$500</span>
+                        <p class="card__type text-present-4">MasterCard</p>
+                        <span class="card__amount text-present-4-bold">$500</span>
                     </article>
                 </li>
                 <li class="accounts-section__cards-item">
@@ -50,19 +156,18 @@
                         <div class="card__logo card__logo--savings">
                             <i class="fa-solid fa-piggy-bank"></i>
                         </div>
-                        <p class="card__type">Savings</p>
-                        <span class="card__amount">$2000</span>
+                        <p class="card__type text-present-4">Savings</p>
+                        <span class="card__amount text-present-4-bold">$2000</span>
                     </article>
                 </li>
             </ul>
         </section>
-
         <!-- Money Spent Section -->
         <section class="money-spent-section primary-section">
             <header class="primary-section__header">
-                <h2 class="money-spent-section__title primary-section__title">Money Spent</h2>
+                <h2 class="money-spent-section__title text-present-2">Money Spent</h2>
             </header>
-
+        
             <div class="money-spent-section__chart">
                 <div class="chart">
                     <div class="chart__inner"></div>
@@ -77,8 +182,8 @@
                             <div class="data-card">
                                 <div class="data-card__horizontal-line data-card__horizontal-line--entertainment"></div>
                                 <div class="data-card__text-content">
-                                    <p class="data-card__title">Entertainment</p>
-                                    <p class="data-card__value">$50.00</p>
+                                    <p class="data-card__title text-present-5">Entertainment</p>
+                                    <p class="data-card__value text-present-4-bold">$50.00</p>
                                 </div>
                             </div>
                         </li>
@@ -86,8 +191,8 @@
                             <div class="data-card">
                                 <div class="data-card__horizontal-line data-card__horizontal-line--bills"></div>
                                 <div class="data-card__text-content">
-                                    <p class="data-card__title">Bills</p>
-                                    <p class="data-card__value">$750.00</p>
+                                    <p class="data-card__title text-present-5">Bills</p>
+                                    <p class="data-card__value text-present-4-bold">$750.00</p>
                                 </div>
                             </div>
                         </li>
@@ -95,8 +200,8 @@
                             <div class="data-card">
                                 <div class="data-card__horizontal-line data-card__horizontal-line--dining-out"></div>
                                 <div class="data-card__text-content">
-                                    <p class="data-card__title">Dining Out</p>
-                                    <p class="data-card__value">$75.00</p>
+                                    <p class="data-card__title text-present-5">Dining Out</p>
+                                    <p class="data-card__value text-present-4-bold">$75.00</p>
                                 </div>
                             </div>
                         </li>
@@ -104,69 +209,72 @@
                             <div class="data-card">
                                 <div class="data-card__horizontal-line data-card__horizontal-line--personal-care"></div>
                                 <div class="data-card__text-content">
-                                    <p class="data-card__title">Personal Care</p>
-                                    <p class="data-card__value">$100.00</p>
+                                    <p class="data-card__title text-present-5">Personal Care</p>
+                                    <p class="data-card__value text-present-4-bold">$100.00</p>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
-
+        
             </div>
         </section>
-
         <!-- Transactions Section -->
-        <section class="transactions-section primary-section">
+        <section class="transactinos-section primary-section">
             <header class="transactions-section__header primary-section__header">
-                <h2 class="transactions-section__title primary-section__title">Last Transactions</h2>
+                <h2 class="transactions-section__title text-present-2">Transactions</h2>
                 <a href="#" class="transactions-section__link">
                     View All <i class="fa-solid fa-caret-right"></i>
                 </a>
             </header>
-
             <ul class="transactions-section__list">
                 <li class="transaction">
-                    <img src="../assets/images/avatars/emma-richardson.jpg" alt="Emma Richardson avatar" class="transaction__avatar">
-                    <p class="transaction__name">Emma Richardson</p>
+                    <img src="../assets/images/avatars/emma-richardson.jpg" alt="Emma Richardson avatar"
+                        class="transaction__avatar">
+                    <p class="transaction__name text-present-4-bold">Emma Richardson</p>
                     <div class="transaction__details">
-                        <p class="transaction__amount transaction__amount--positive">+$75.50</p>
-                        <time datetime="2024-08-19" class="transaction__date">19 Aug 2024</time>
+                        <p class="transaction__amount text-present-4-bold transaction__amount--positive">+$75.50</p>
+                        <time datetime="2024-08-19" class="transaction__date text-present-5">19 Aug 2024</time>
                     </div>
                 </li>
                 <li class="transaction">
-                    <img src="../assets/images/avatars/savory-bites-bistro.jpg" alt="Savory Bites Bistro avatar" class="transaction__avatar">
-                    <p class="transaction__name">Savory Bites Bistro</p>
+                    <img src="../assets/images/avatars/savory-bites-bistro.jpg" alt="Savory Bites Bistro avatar"
+                        class="transaction__avatar">
+                    <p class="transaction__name text-present-4-bold">Savory Bites Bistro</p>
                     <div class="transaction__details">
-                        <p class="transaction__amount">-$55.50</p>
-                        <time datetime="2024-08-19" class="transaction__date">19 Aug 2024</time>
+                        <p class="transaction__amount text-present-4-bold">-$55.50</p>
+                        <time datetime="2024-08-19" class="transaction__date text-present-5">19 Aug 2024</time>
                     </div>
                 </li>
                 <li class="transaction">
-                    <img src="../assets/images/avatars/daniel-carter.jpg" alt="Daniel Carter avatar" class="transaction__avatar">
-                    <p class="transaction__name">Daniel Carter</p>
+                    <img src="../assets/images/avatars/daniel-carter.jpg" alt="Daniel Carter avatar"
+                        class="transaction__avatar">
+                    <p class="transaction__name text-present-4-bold">Daniel Carter</p>
                     <div class="transaction__details">
-                        <p class="transaction__amount">-$42.30</p>
-                        <time datetime="2024-08-18" class="transaction__date">18 Aug 2024</time>
+                        <p class="transaction__amount text-present-4-bold">-$42.30</p>
+                        <time datetime="2024-08-18" class="transaction__date text-present-5">18 Aug 2024</time>
                     </div>
                 </li>
                 <li class="transaction">
                     <img src="../assets/images/avatars/sun-park.jpg" alt="Sun Park avatar" class="transaction__avatar">
-                    <p class="transaction__name">Sun Park</p>
+                    <p class="transaction__name text-present-4-bold">Sun Park</p>
                     <div class="transaction__details">
-                        <p class="transaction__amount transaction__amount--positive">+$120.00</p>
-                        <time datetime="2024-08-17" class="transaction__date">17 Aug 2024</time>
+                        <p class="transaction__amount text-present-4-bold transaction__amount--positive">+$120.00</p>
+                        <time datetime="2024-08-17" class="transaction__date text-present-5">17 Aug 2024</time>
                     </div>
                 </li>
                 <li class="transaction">
-                    <img src="../assets/images/avatars/urban-services-hub.jpg" alt="Urban Services Hub avatar" class="transaction__avatar">
-                    <p class="transaction__name">Urban Services Hub</p>
+                    <img src="../assets/images/avatars/urban-services-hub.jpg" alt="Urban Services Hub avatar"
+                        class="transaction__avatar">
+                    <p class="transaction__name text-present-4-bold">Urban Services Hub</p>
                     <div class="transaction__details">
-                        <p class="transaction__amount">-$65.00</p>
-                        <time datetime="2024-08-17" class="transaction__date">17 Aug 2024</time>
+                        <p class="transaction__amount text-present-4-bold">-$65.00</p>
+                        <time datetime="2024-08-17" class="transaction__date text-present-5">17 Aug 2024</time>
                     </div>
                 </li>
             </ul>
         </section>
     </main>
 </body>
+
 </html>
