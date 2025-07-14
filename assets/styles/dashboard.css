@@ -1,0 +1,250 @@
+/* || Accounts Section
+ *************************/
+.accounts-section__title {
+    color: var(--primary-base);
+}
+
+.accounts-section__balance {
+    margin-top: 20px;
+    padding-left: 16px;
+    height: 110px;
+
+    border-radius: 12px;
+    background-color: var(--bg);
+
+    display: flex;
+    align-items: center;
+}
+
+.accounts-section__balance i {
+    font-size: 40px;
+    color: var(--blue);
+}
+
+.accounts-section__balance-details {
+    margin-left: 30px;
+}
+
+.accounts-section__label {
+    color: var(--secondary-base);
+}
+
+.accounts-section__amount {
+    margin-top: 11px;
+    color: var(--primary-base);
+}
+
+/* || Card (Bank Cards)
+ *************************/
+.accounts-section__cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.accounts-section__cards-item {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--stroke);
+}
+
+.accounts-section__cards-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+}
+
+.card__logo {
+    width: 50px;
+    height: 35px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.card__logo--savings {
+    background-color: var(--bg);
+}
+
+.card__logo--savings i {
+    font-size: 20px;
+    color: var(--blue);
+}
+
+.card__type {
+    margin-left: 16px;
+    color: var(--secondary-base);
+}
+
+.card__amount {
+    margin-left: auto;
+    color: var(--primary-base);
+}
+
+/* || Money Spent Section
+ *************************/
+.money-spent-section__title {
+    color: var(--primary-base);
+}
+
+.money-spent-section__chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* || Transaction Section
+ *************************/
+.transactions-section__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.transactions-section__title {
+    color: var(--primary-base);
+}
+
+.transactions-section__link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--secondary-base);
+}
+
+.transactions-section__link i {
+    margin-left: 16px;
+}
+
+.transactions-section__list {
+    margin-top: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* || Transaction Item
+ *************************/
+.transaction {
+    padding-bottom: 19px;
+    border-bottom: 1px solid var(--stroke);
+
+    display: flex;
+    align-items: center;
+}
+
+.transaction:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.transaction__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.transaction__name {
+    margin-left: 16px;
+
+    color: var(--primary-base);
+}
+
+.transaction__details {
+    margin-left: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.transaction__amount {
+    margin-bottom: 8px;
+
+    color: var(--primary-base);
+}
+
+.transaction__amount--positive {
+    color: var(--success);
+}
+
+.transaction__date {
+    color: var(--secondary-base);
+}
+
+@media only screen and (min-width: 768px) {
+    /* || Accounts Section
+     *************************/
+    .accounts-section {
+        display: flex;
+        gap: 20px;
+    }
+
+    .accounts-section__balance {
+        width: 247px;
+    }
+
+    .accounts-section__cards-list {
+        width: 100%;
+        padding-left: 20px;
+        border-left: 1px solid var(--stroke);
+    }
+
+    /* || Money Spent Section
+     *************************/
+    .money-spent-section__chart {
+        padding-left: 166px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* || Transaction Item
+     *************************/
+    .transaction__avatar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .accounts-section {
+        max-width: 608px;
+        grid-area: accounts;
+    }
+
+    .money-spent-section {
+        max-width: 428px;
+        grid-area: money;
+    }
+
+    .transactinos-section {
+        max-width: 608px;
+        grid-area: transactions;
+    }
+
+    /* || Money Spent Section
+     *************************/
+    .money-spent-section {
+        max-width: none;
+    }
+
+    .money-spent-section__chart {
+        padding-left: 0;
+        justify-content: center;
+        gap: 16px;
+    }
+}

@@ -1,0 +1,33 @@
+/* || Default Values
+ *************************/
+.primary-section {
+    padding: 24px 20px;
+    width: 100%;
+    border-radius: 12px;
+    background-color: var(--unit-bg);
+}
+
+.primary-section:not(:first-child) {
+    margin-top: 16px;
+    ;
+}
+
+.primary-section__header {
+    margin-bottom: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+    .primary-section {
+        padding: 32px;
+    }
+
+    .primary-section:not(:first-child) {
+        margin-top: 24px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .primary-section:not(:first-child) {
+        margin-top: 0;
+    }
+}

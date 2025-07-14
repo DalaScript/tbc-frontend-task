@@ -1,0 +1,269 @@
+/* || Nav Bar
+ *************************/
+.nav-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* || Hamburger + Close
+ *************************/
+.nav-bar__hamburger,
+.side-bar__close {
+    font-size: 26px;
+    color: var(--primary-base);
+    cursor: pointer;
+}
+
+.side-bar__close {
+    position: absolute;
+    top: 40px;
+    left: 32px;
+}
+
+/* || Nav Bar Logo
+ *************************/
+.side-bar__logo {
+    /* position: absolute;
+    top: 40px;
+    left: 32px; */
+    color: var(--primary-base);
+}
+
+/* || Title
+ *************************/
+.nav-bar__title {
+    color: var(--primary-base);
+}
+
+/* || User
+ *************************/
+.nav-bar__user-details {
+    display: none;
+}
+
+.nav-bar__user-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* || Side Bar
+ *************************/
+.nav-bar__side-bar {
+    padding-top: 90px;
+    padding-bottom: 210px;
+    width: 70%;
+    height: 100vh;
+    border-radius: 0 16px 16px 0;
+    background-color: var(--unit-bg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: -100%;
+
+    /* transition: left .3s ease-in-out; */
+    z-index: 99;
+}
+
+#menu-minimize:checked ~ .nav-bar__side-bar {
+    width: 98px;
+}
+
+#menu-minimize:checked ~ .nav-bar__side-bar .side-bar__item-title,
+#menu-minimize:checked ~ .nav-bar__side-bar .theme-switch__text {
+    display: none !important;
+}
+
+#menu-minimize:checked ~ .nav-bar__side-bar .side-bar__link,
+#menu-minimize:checked ~ .nav-bar__side-bar .theme-switch {
+    padding-left: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+#menu-minimize:checked ~ .nav-bar__side-bar .side-bar__link svg {
+    margin-right: 0;
+}
+
+#menu-minimize:checked ~ .nav-bar__side-bar .side-bar__link,
+#menu-minimize:checked ~ .nav-bar__side-bar .theme-switch {
+    border-radius: 0;
+}
+
+.side-bar__item {
+    margin-bottom: 4px;
+}
+
+.side-bar__item--logo {
+    padding-top: 40px;
+    padding-left: 32px;
+    width: 100%;
+    height: 100px;
+}
+
+.side-bar__logo--small {
+    display: none;
+}
+
+#menu-minimize:checked ~ .nav-bar__side-bar .side-bar__item--logo {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#menu-minimize:checked ~ .nav-bar__side-bar .side-bar__logo--small {
+    display: block;
+}
+
+#menu-minimize:checked ~ .nav-bar__side-bar .side-bar__logo--large {
+    display: none;
+}
+
+.side-bar__link {
+    padding-left: 20px;
+    width: 90%;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--secondary-base);
+}
+
+.side-bar__link svg {
+    margin-right: 16px;
+    width: 22px;
+}
+
+.side-bar__link--active {
+    padding-left: 16px;
+    border-left: 4px solid var(--blue);
+    border-radius: 0 12px 12px 0;
+    background-color: var(--bg);
+    color: var(--primary-base);
+}
+
+.side-bar__link--active svg {
+    color: var(--blue);
+}
+
+.side-bar__minimize-icon svg {
+    transform: rotate(180deg);
+}
+
+.side-bar__item-title,
+.theme-switch__text {
+    white-space: nowrap;
+}
+
+/* || Overlay
+ *************************/
+.side-bar__overlay {
+    opacity: 0;
+    pointer-events: none;
+
+    background-color: var(--primary-base);
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 99;
+}
+
+/* || Toggler Checkboxes
+ *************************/
+#side-bar-toggle:checked~.nav-bar__side-bar {
+    left: 0;
+}
+
+#side-bar-toggle:checked~.side-bar__overlay {
+    opacity: .25;
+    pointer-events: auto;
+}
+
+.toggler {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* || Side Bar
+     *************************/
+    .nav-bar__side-bar {
+        width: 45%;
+    }
+
+    /* || User
+     *************************/
+    .nav-bar__user {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .nav-bar__user-details {
+        display: block;
+    }
+
+    .nav-bar__user-name {
+        color: var(--primary-base);
+    }
+
+    .nav-bar__user-email {
+        margin-top: 1px;
+        color: var(--secondary-base);
+    }
+
+    .nav-bar__user-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* || Side Bar
+     *************************/
+    .side-bar__item--logo {
+        margin-bottom: 24px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    /* || Hamburger + Close
+     *************************/
+    .nav-bar__hamburger,
+    .side-bar__close {
+        display: none;
+    }
+
+    /* || Side Bar
+     *************************/
+    .nav-bar__side-bar {
+        padding-top: 0;
+        width: 300px;
+        background-color: var(--unit-bg);
+        left: 0;
+    }
+
+    /* || User
+     *************************/
+    .nav-bar__user-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav-bar__user-email {
+        margin-top: 5px;
+    }
+
+    /* || Overlay
+     *************************/
+    .side-bar__overlay {
+        display: none;
+    }
+}

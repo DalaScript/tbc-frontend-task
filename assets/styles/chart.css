@@ -1,0 +1,148 @@
+/* || Chart
+ *************************/
+.chart {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+
+    background: conic-gradient(
+        var(--green) 0% 5.1%, /* green - 5.1% */
+        var(--blue) 5.1% 82%, /* blue - 76.9% */
+        var(--yellow) 82% 89.7%, /* yellow - 7.7% */
+        var(--salmon) 89.7% 100% /* salmon - 10.3% */
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.chart__inner {
+    width: 162px;
+    height: 162px;
+    border-radius: 50%;
+
+    background-color: var(--unit-bg);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.chart__inner::before {
+    content: '';
+    width: 188px;
+    height: 188px;
+    border-radius: 50%;
+
+    background-color: var(--unit-bg);
+    opacity: .20;
+
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.chart__text-content {
+    z-index: 1;
+    text-align: center;
+}
+
+.chart__money-spent {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+
+    color: var(--primary-base);
+}
+
+.chart__money-limit {
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+
+    color: var(--secondary-base);
+}
+
+/* || Data
+ *************************/
+.data {
+    margin-top: 16px;
+    width: 100%;
+}
+
+.data__cards-list {
+    width: 100%;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: auto auto;
+}
+
+/* || Data Card
+ *************************/
+.data-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.data-card__horizontal-line {
+    width: 4px;
+    height: 43px;
+    border-radius: 8px;
+}
+
+.data-card__horizontal-line--entertainment {
+    background-color: var(--green);
+}
+
+.data-card__horizontal-line--bills {
+    background-color: var(--blue);
+}
+
+.data-card__horizontal-line--dining-out {
+    background-color: var(--yellow);
+}
+
+.data-card__horizontal-line--personal-care {
+    background-color: var(--salmon);
+}
+
+.data-card__title {
+    color: var(--secondary-base);
+}
+
+.data-card__value {
+    margin-top: 4px;
+    color: var(--primary-base);
+}
+
+@media only screen and (min-width: 768px) {
+    /* || Data
+     *************************/
+    .data {
+        margin-top: 0;
+        width: 100px;
+    }
+
+    .data__cards-list {
+        grid-template-columns: auto;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    /* || Chart
+     *************************/
+    .chart {
+        margin: 0 auto;
+    }
+}
