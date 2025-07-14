@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../assets/styles/base.css">
     <link rel="stylesheet" href="../assets/styles/layout.css">
     <link rel="stylesheet" href="../assets/styles/components.css">
-    <link rel="stylesheet" href="../assets/styles/header-last.css">
+    <link rel="stylesheet" href="../assets/styles/header.css">
     <link rel="stylesheet" href="../assets/styles/darkmode.css">
     <link rel="stylesheet" href="../assets/styles/dashboard.css">
     <link rel="stylesheet" href="../assets/styles/chart.css">
@@ -29,10 +29,17 @@
             <!-- User Avatar -->
             <div class="nav-bar__user">
                 <img class="nav-bar__user-img" src="../assets/images/avatars/nika-dalalishvili.jpg" alt="User Avatar" />
+                <div class="nav-bar__user-details">
+                    <p class="nav-bar__user-name text-present-2">Nika Dalalishvili</p>
+                    <p class="nav-bar__user-email text-present-4">Nik.Dalalishvili@gmail.com</p>
+                </div>
             </div>
 
             <!-- Sidebar Toggle Checkbox -->
             <input class="nav-bar__toggle toggler" id="side-bar-toggle" type="checkbox" />
+
+            <!-- Sidebar Minimize Checkbox -->
+            <input class="nav-bar__toggle" id="menu-minimize" type="checkbox" />
 
             <!-- Overlay -->
             <label class="side-bar__overlay" for="side-bar-toggle"></label>
@@ -46,7 +53,7 @@
 
                 <ul class="side-bar__list">
                     <li class="side-bar__item--logo">
-                        <svg class="side-bar__logo" width="122" height="22" viewBox="0 0 122 22" fill="currentColor"
+                        <svg class="side-bar__logo side-bar__logo--large" width="122" height="22" viewBox="0 0 122 22" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M8.192 21.44H2.176V10.24H0V5.312H2.304C2.944 2.272 5.92 0 11.2 0H12.48V4.288H10.24C8.576 4.288 7.776 4.448 7.808 5.312H12.48V10.24H8.192V21.44Z" />
@@ -62,19 +69,24 @@
                             <path
                                 d="M112.462 21.76C106.99 21.76 103.15 19.424 103.15 13.376C103.15 8.128 106.958 4.992 112.334 4.992C117.902 4.992 121.454 7.776 121.454 12.96C121.454 13.504 121.422 13.92 121.358 14.496H108.718C108.814 16.448 109.678 16.992 112.238 16.992C114.67 16.992 115.31 16.576 115.31 15.616V15.264H121.326V15.648C121.326 19.232 117.902 21.76 112.462 21.76ZM112.206 9.6C109.998 9.6 109.07 10.08 108.814 11.456H115.63C115.406 10.08 114.446 9.6 112.206 9.6Z" />
                         </svg>
+                        <svg class="side-bar__logo side-bar__logo--small" width="14" height="22" viewBox="0 0 14 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.95201 21.44H2.93601V10.24H0.76001V5.312H3.06401C3.70401 2.272 6.68001 0 11.96 0H13.24V4.288H11C9.33601 4.288 8.53601 4.448 8.56801 5.312H13.24V10.24H8.95201V21.44Z" />
+                        </svg>
                     </li>
                     <li class="side-bar__item">
-                        <label for="side-bar-toggle">
+                        
                             <a class="side-bar__link text-present-3 side-bar__link--active">
+                                <label for="side-bar-toggle">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg> 
-                                <span>Dashboard</span>
+                                <span class="side-bar__item-title">Dashboard</span>
+                                </label>
                             </a>
-                        </label>
+                        
                     </li>
                     <li class="side-bar__item">
                         <a href="./transactions.html" class="side-bar__link text-present-3">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M535 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l64 64c4.5 4.5 7 10.6 7 17s-2.5 12.5-7 17l-64 64c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l23-23L384 112c-13.3 0-24-10.7-24-24s10.7-24 24-24l174.1 0L535 41zM105 377l-23 23L256 400c13.3 0 24 10.7 24 24s-10.7 24-24 24L81.9 448l23 23c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L7 441c-4.5-4.5-7-10.6-7-17s2.5-12.5 7-17l64-64c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM96 64l241.9 0c-3.7 7.2-5.9 15.3-5.9 24c0 28.7 23.3 52 52 52l117.4 0c-4 17 .6 35.5 13.8 48.8c20.3 20.3 53.2 20.3 73.5 0L608 169.5 608 384c0 35.3-28.7 64-64 64l-241.9 0c3.7-7.2 5.9-15.3 5.9-24c0-28.7-23.3-52-52-52l-117.4 0c4-17-.6-35.5-13.8-48.8c-20.3-20.3-53.2-20.3-73.5 0L32 342.5 32 128c0-35.3 28.7-64 64-64zm64 64l-64 0 0 64c35.3 0 64-28.7 64-64zM544 320c-35.3 0-64 28.7-64 64l64 0 0-64zM320 352a96 96 0 1 0 0-192 96 96 0 1 0 0 192z"/></svg> 
-                            <span>Transactions</span>
+                            <span class="side-bar__item-title">Transactions</span>
                         </a>
                     </li>
                 </ul>
@@ -101,19 +113,11 @@
                             <span class="text-present-3 theme-switch__text theme-switch__text--dark">Dark Mode</span>
                         </label>
                     </li>
-                    <li class="side-bar__link" style="display: none;">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right"
-                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <g>
-                                <path fill="currentColor"
-                                    d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z">
-                                </path>
-                                <path fill="currentColor"
-                                    d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z">
-                                </path>
-                            </g>
-                        </svg>
-                        <span>Minimize Menu</span>
+                    <li class="">
+                        <label for="menu-minimize" class="side-bar__link side-bar__minimize-icon text-present-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>
+                            <span class="side-bar__item-title">Minimize Menu</span>
+                        </label>
                     </li>
                 </ul>
             </aside>
