@@ -1,0 +1,100 @@
+/* || Transaction Section
+ *************************/
+.transactions-section__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.transactions-section__title {
+    color: var(--primary-base);
+}
+
+.transactions-section__link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--secondary-base);
+}
+
+.transactions-section__link i {
+    margin-left: 16px;
+}
+
+.transactions-section__list {
+    margin-top: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* || Transaction Item
+ *************************/
+.transaction {
+    padding-bottom: 19px;
+    border-bottom: 1px solid var(--stroke);
+
+    display: flex;
+    align-items: center;
+}
+
+.transaction:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.transaction__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.transaction__name {
+    margin-left: 16px;
+
+    color: var(--primary-base);
+}
+
+.transaction__details {
+    margin-left: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.transaction__amount {
+    margin-bottom: 8px;
+
+    color: var(--primary-base);
+}
+
+.transaction__amount--positive {
+    color: var(--success);
+}
+
+.transaction__date {
+    color: var(--secondary-base);
+}
+
+@media only screen and (min-width: 768px) {
+    .transaction__avatar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .transactinos-section {
+        max-width: 608px;
+        grid-area: transactions;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .transactions-section__link:hover {
+        color: var(--primary-base);
+    }
+}
