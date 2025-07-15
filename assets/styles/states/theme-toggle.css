@@ -1,0 +1,32 @@
+#darkmode:checked ~ .theme-toggle .theme-toggle__label {
+    box-shadow: 2px 2px 6px rgba(227, 227, 227, .15) inset;
+}
+
+#darkmode:checked ~ .theme-toggle .theme-toggle__circle {
+    left: 100%;
+    transform: translate(-110%, -50%);
+    box-shadow: 2px 2px 4px rgba(227, 227, 227, .15), -2px -2px 5px rgba(227, 227, 227, .15) inset;
+}
+
+#darkmode:checked ~ .theme-toggle .theme-toggle__icon--sun {
+    margin-top: 150%;
+    opacity: 0;
+}
+
+#darkmode:checked ~ .theme-toggle .theme-toggle__icon--moon {
+    margin-top: 0%;
+    opacity: 1;
+}
+
+#darkmode:checked ~ .theme-toggle .theme-toggle__text--dark {
+    display: inline;
+}
+
+#darkmode:checked ~ .theme-toggle .theme-toggle__text--light {
+    display: none;
+}
+
+.theme-toggle:active .theme-toggle__circle {
+    /* 50% of theme switch */
+    width: 40px;
+}
