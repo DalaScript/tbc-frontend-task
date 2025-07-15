@@ -1,0 +1,44 @@
+/* || Side Bar Minimize
+ *************************/
+@media only screen and (min-width: 1440px) {
+    body:has(#side-bar-minimize:checked) {
+        margin-left: 98px;
+    }
+
+    #side-bar-minimize:checked~.side-bar {
+        width: 96px;
+        padding-right: 0;
+    }
+
+    #side-bar-minimize:checked~.side-bar .side-bar__item--active,
+    #side-bar-minimize:checked~.side-bar .theme-toggle {
+        border-radius: 0;
+    }
+
+    #side-bar-minimize:checked~.side-bar .side-bar__item-title {
+        display: none;
+    }
+
+    #side-bar-minimize:checked~.side-bar .side-bar__item--minimize {
+        background-color: var(--bg);
+    }
+
+    #side-bar-minimize:checked~.side-bar .side-bar__item--minimize .side-bar__icon {
+        transform: rotate(0deg);
+        color: var(--blue);
+    }
+
+    #side-bar-minimize:checked~.side-bar .side-bar__logo--small {
+        right: 50%;
+    }
+
+    #side-bar-minimize:checked~.side-bar .side-bar__logo--large {
+        left: -999px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #side-bar-minimize:checked~.side-bar .side-bar__item--minimize:hover .side-bar__icon {
+        color: var(--primary-base);
+    }
+}
