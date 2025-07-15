@@ -7,25 +7,25 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <!-- Base Styles -->
-    <link rel="stylesheet" href="../assets/styles/base/variables.css" />
-    <link rel="stylesheet" href="../assets/styles/base/reset.css" />
+    <link rel="stylesheet" href="./assets/styles/base/variables.css" />
+    <link rel="stylesheet" href="./assets/styles/base/reset.css" />
     <!-- Page Layout -->
-    <link rel="stylesheet" href="../assets/styles/layout/page-layout.css">
+    <link rel="stylesheet" href="./assets/styles/layout/page-layout.css">
     <!-- Header Components -->
-    <link rel="stylesheet" href="../assets/styles/components/nav-bar.css">
-    <link rel="stylesheet" href="../assets/styles/components/side-bar.css">
-    <link rel="stylesheet" href="../assets/styles/components/theme-toggle.css">
+    <link rel="stylesheet" href="./assets/styles/components/nav-bar.css">
+    <link rel="stylesheet" href="./assets/styles/components/side-bar.css">
+    <link rel="stylesheet" href="./assets/styles/components/theme-toggle.css">
     <!-- Header States -->
-    <link rel="stylesheet" href="../assets/styles/states/side-bar-minimize.css">
-    <link rel="stylesheet" href="../assets/styles/states/side-bar-toggle.css">
-    <link rel="stylesheet" href="../assets/styles/states/theme-toggle.css">
+    <link rel="stylesheet" href="./assets/styles/states/side-bar-minimize.css">
+    <link rel="stylesheet" href="./assets/styles/states/side-bar-toggle.css">
+    <link rel="stylesheet" href="./assets/styles/states/theme-toggle.css">
     <!-- Dashboard Page Layouts -->
-    <link rel="stylesheet" href="../assets/styles/layout/dashboard.css">
-    <link rel="stylesheet" href="../assets/styles/layout/accounts-section.css">
-    <link rel="stylesheet" href="../assets/styles/layout/money-spent-section.css">
-    <link rel="stylesheet" href="../assets/styles/components/chart.css">
-    <link rel="stylesheet" href="../assets/styles/components/chart-data.css">
-    <link rel="stylesheet" href="../assets/styles/layout/transactions-section.css">
+    <link rel="stylesheet" href="./assets/styles/layout/dashboard.css">
+    <link rel="stylesheet" href="./assets/styles/layout/accounts-section.css">
+    <link rel="stylesheet" href="./assets/styles/layout/money-spent-section.css">
+    <link rel="stylesheet" href="./assets/styles/components/chart.css">
+    <link rel="stylesheet" href="./assets/styles/components/chart-data.css">
+    <link rel="stylesheet" href="./assets/styles/layout/transactions-section.css">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
 
             <!-- User Avatar -->
             <div class="nav-bar__user">
-                <img class="nav-bar__user-img" src="../assets/images/avatars/nika-dalalishvili.jpg" alt="User Avatar" />
+                <img class="nav-bar__user-img" src="./assets/images/avatars/nika-dalalishvili.jpg" alt="User Avatar" />
                 <div class="nav-bar__user-details">
                     <p class="nav-bar__user-name text-present-2">Nika Dalalishvili</p>
                     <p class="nav-bar__user-email text-present-4">Nik.Dalalishvili@gmail.com</p>
@@ -109,7 +109,7 @@
                         </a>
                     </li>
                     <li class="side-bar__list-item">
-                        <a href="./transactions.html" class="side-bar__item text-present-3">
+                        <a href="./public/transactions.html" class="side-bar__item text-present-3">
                             <svg class="side-bar__icon" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path fill="currentColor"
@@ -175,7 +175,7 @@
                 <li class="accounts-section__cards-item">
                     <article class="card">
                         <div class="card__logo">
-                            <img class="card__img" src="../assets/images/visa-logo.png" alt="Visa Card logo">
+                            <img class="card__img" src="./assets/images/visa-logo.png" alt="Visa Card logo">
                         </div>
                         <p class="card__type text-present-4">VISA</p>
                         <span class="card__amount text-present-4-bold">$1336</span>
@@ -184,7 +184,7 @@
                 <li class="accounts-section__cards-item">
                     <article class="card">
                         <div class="card__logo">
-                            <img class="card__img" src="../assets/images/mastercard-logo.png" alt="MasterCard logo">
+                            <img class="card__img" src="./assets/images/mastercard-logo.png" alt="MasterCard logo">
                         </div>
                         <p class="card__type text-present-4">MasterCard</p>
                         <span class="card__amount text-present-4-bold">$500</span>
@@ -262,13 +262,13 @@
         <section class="transactinos-section primary-section">
             <header class="transactions-section__header primary-section__header">
                 <h2 class="transactions-section__title text-present-2">Transactions</h2>
-                <a href="./transactions.html" class="transactions-section__link">
+                <a href="./public/transactions.html" class="transactions-section__link">
                     View All <i class="fa-solid fa-caret-right"></i>
                 </a>
             </header>
             <ul class="transactions-section__list">
                 <li class="transaction">
-                    <img src="../assets/images/avatars/emma-richardson.jpg" alt="Emma Richardson avatar"
+                    <img src="./assets/images/avatars/emma-richardson.jpg" alt="Emma Richardson avatar"
                         class="transaction__avatar">
                     <p class="transaction__name text-present-4-bold">Emma Richardson</p>
                     <div class="transaction__details">
@@ -277,7 +277,7 @@
                     </div>
                 </li>
                 <li class="transaction">
-                    <img src="../assets/images/avatars/savory-bites-bistro.jpg" alt="Savory Bites Bistro avatar"
+                    <img src="./assets/images/avatars/savory-bites-bistro.jpg" alt="Savory Bites Bistro avatar"
                         class="transaction__avatar">
                     <p class="transaction__name text-present-4-bold">Savory Bites Bistro</p>
                     <div class="transaction__details">
@@ -286,7 +286,7 @@
                     </div>
                 </li>
                 <li class="transaction">
-                    <img src="../assets/images/avatars/daniel-carter.jpg" alt="Daniel Carter avatar"
+                    <img src="./assets/images/avatars/daniel-carter.jpg" alt="Daniel Carter avatar"
                         class="transaction__avatar">
                     <p class="transaction__name text-present-4-bold">Daniel Carter</p>
                     <div class="transaction__details">
@@ -295,7 +295,7 @@
                     </div>
                 </li>
                 <li class="transaction">
-                    <img src="../assets/images/avatars/sun-park.jpg" alt="Sun Park avatar" class="transaction__avatar">
+                    <img src="./assets/images/avatars/sun-park.jpg" alt="Sun Park avatar" class="transaction__avatar">
                     <p class="transaction__name text-present-4-bold">Sun Park</p>
                     <div class="transaction__details">
                         <p class="transaction__amount text-present-4-bold transaction__amount--positive">+$120.00</p>
@@ -303,7 +303,7 @@
                     </div>
                 </li>
                 <li class="transaction">
-                    <img src="../assets/images/avatars/urban-services-hub.jpg" alt="Urban Services Hub avatar"
+                    <img src="./assets/images/avatars/urban-services-hub.jpg" alt="Urban Services Hub avatar"
                         class="transaction__avatar">
                     <p class="transaction__name text-present-4-bold">Urban Services Hub</p>
                     <div class="transaction__details">
