@@ -1,0 +1,36 @@
+/* || Money Spent Section
+ *************************/
+.money-spent-section__title {
+    color: var(--primary-base);
+}
+
+.money-spent-section__chart {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* || Money Spent Section
+     *************************/
+    .money-spent-section__chart {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .money-spent-section {
+        max-width: 428px;
+        grid-area: money;
+    }
+
+    .money-spent-section {
+        max-width: none;
+    }
+
+    .money-spent-section__chart {
+        gap: 16px;
+    }
+}
