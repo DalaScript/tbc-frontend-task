@@ -17,9 +17,41 @@ a {
     text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, span, label, time {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+label,
+a,
+time {
     user-select: none;
-    -webkit-user-select: none; /* For Safari */
-    -moz-user-select: none; /* For Firefox */
-    -ms-user-select: none; /* For IE/Edge */
+    -webkit-user-select: none;
+    /* For Safari */
+    -moz-user-select: none;
+    /* For Firefox */
+    -ms-user-select: none;
+    /* For IE/Edge */
+}
+
+select {
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    select {
+        -webkit-appearance: auto;
+        -moz-appearance: auto;
+        appearance: auto;
+    }
 }

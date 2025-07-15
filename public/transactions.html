@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <link rel="stylesheet" href="../assets/styles/icons.css">
     <!-- Base Styles -->
     <link rel="stylesheet" href="../assets/styles/base/variables.css" />
     <link rel="stylesheet" href="../assets/styles/base/reset.css" />
@@ -20,8 +19,9 @@
     <link rel="stylesheet" href="../assets/styles/states/side-bar-minimize.css">
     <link rel="stylesheet" href="../assets/styles/states/side-bar-toggle.css">
     <link rel="stylesheet" href="../assets/styles/states/theme-toggle.css">
-
-    <link rel="stylesheet" href="../assets/styles/header-new.css">
+    <!-- Transactions Layout -->
+    <link rel="stylesheet" href="../assets/styles/layout/transactions.css">
+    <link rel="stylesheet" href="../assets/styles/layout/transactions-table.css">
 </head>
 
 <body>
@@ -154,7 +154,397 @@
             </aside>
         </nav>
     </header>
-    <main></main>
+    <main>
+        <section class="transactions primary-section">
+            <header class="transactions__header">
+                <label for="transactions__search-input" class="transactions__search">
+                    <input type="text" name="transactions__search-input"
+                        class="transactions__search-input text-present-4" id="transactions__search-input"
+                        placeholder="Search transaction" />
+                    <svg class="transactions__search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        fill="currentColor"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                    </svg>
+                </label>
+                <div class="transactions__sort-wrapper">
+                    <div class="transactions__select-wrapper">
+                        <label for="transactions__select--by" class="transactions__select-label text-present-4">
+                            Sort by
+                        </label>
+                        <select class="transactions__select transactions__select--by text-present-4"
+                            id="transactions__select--by" name="transactions__select--by">
+                            <option selected value="latest">Latest</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="a-z">A to Z</option>
+                            <option value="z-a">Z to A</option>
+                            <option value="highest">Highest</option>
+                            <option value="lowest">Lowest</option>
+                        </select>
+                        <svg class="transactions__select-icon transactions__select-icon--sort-by"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                            fill="currentColor"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path
+                                d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+                        </svg>
+                    </div>
+                    <div class="transactions__select-wrapper">
+                        <label for="transactions__select--category" class="transactions__select-label text-present-4">
+                            Category
+                        </label>
+                        <select class="transactions__select transactions__select--category" text-present-4
+                            id="transactions__select--category" name="transactions__select--category">
+                            <option selected value="all-transactions">All Transactions</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="bills">Bills</option>
+                            <option value="groceries">Groceries</option>
+                            <option value="dining-out">Dining Out</option>
+                            <option value="transportation">Transportation</option>
+                            <option value="personal-care">Personal Care</option>
+                            <option value="education">Education</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="general">General</option>
+                        </select>
+                        <svg class="transactions__select-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                            fill="currentColor"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path
+                                d="M3.9 54.9C10.5 40.9 24.5 32 40 32l432 0c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9 320 448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6l0-79.1L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z" />
+                        </svg>
+                    </div>
+                </div>
+            </header>
+            <div class="transactions__body">
+                <ul class="transactions__for-mobile">
+                    <li class="transactions__list-item">
+                        <img class="transaction__avatar" src="../assets/images/avatars/serenity-spa-and-wellness.jpg"
+                            alt="Sender Avatar">
+                        <div class="transaction__details transaction__details--left">
+                            <p class="transaction__name text-present-4-bold">Bravo Zen Spa</p>
+                            <p class="transaction__category text-present-5">Personal Care</p>
+                        </div>
+                        <div class="transaction__details transaction__details--right">
+                            <p class="transaction__amount text-present-4-bold">-$25.00</p>
+                            <time class="transactoin__date text-present-5" datetime="2024-08-29">29 Aug 2024</time>
+                        </div>
+                    </li>
+                    <li class="transactions__list-item">
+                        <img class="transaction__avatar" src="../assets/images/avatars/elevate-education.jpg"
+                            alt="Sender Avatar">
+                        <div class="transaction__details transaction__details--left">
+                            <p class="transaction__name text-present-4-bold">Alpha Analytics</p>
+                            <p class="transaction__category text-present-5">General</p>
+                        </div>
+                        <div class="transaction__details transaction__details--right">
+                            <p class="transaction__amount text-present-4-bold transaction__amount--positive">+$450.00
+                            </p>
+                            <time class="transactoin__date text-present-5" datetime="2024-08-27">27 Aug 2024</time>
+                        </div>
+                    </li>
+                    <li class="transactions__list-item">
+                        <img class="transaction__avatar" src="../assets/images/avatars/pixel-playground.jpg"
+                            alt="Sender Avatar">
+                        <div class="transaction__details transaction__details--left">
+                            <p class="transaction__name text-present-4-bold">Echo Game Store</p>
+                            <p class="transaction__category text-present-5">Lifestyle</p>
+                        </div>
+                        <div class="transaction__details transaction__details--right">
+                            <p class="transaction__amount text-present-4-bold">-$21.50</p>
+                            <time class="transactoin__date text-present-5" datetime="2024-08-22">22 Aug 2024</time>
+                        </div>
+                    </li>
+                    <li class="transactions__list-item">
+                        <img class="transaction__avatar" src="../assets/images/avatars/emma-richardson.jpg"
+                            alt="Sender Avatar">
+                        <div class="transaction__details transaction__details--left">
+                            <p class="transaction__name text-present-4-bold">Food Merchant</p>
+                            <p class="transaction__category text-present-5">General</p>
+                        </div>
+                        <div class="transaction__details transaction__details--right">
+                            <p class="transaction__amount text-present-4-bold">-$21.50</p>
+                            <time class="transactoin__date text-present-5" datetime="2024-08-20">20 Aug 2024</time>
+                        </div>
+                    </li>
+                    <li class="transactions__list-item">
+                        <img class="transaction__avatar" src="../assets/images/avatars/swift-ride-share.jpg"
+                            alt="Sender Avatar">
+                        <div class="transaction__details transaction__details--left">
+                            <p class="transaction__name text-present-4-bold">Delta Taxi</p>
+                            <p class="transaction__category text-present-5">Transportation</p>
+                        </div>
+                        <div class="transaction__details transaction__details--right">
+                            <p class="transaction__amount text-present-4-bold">-$15.00</p>
+                            <time class="transactoin__date text-present-5" datetime="2024-08-19">19 Aug 2024</time>
+                        </div>
+                    </li>
+                    <li class="transactions__list-item">
+                        <img class="transaction__avatar" src="../assets/images/avatars/sun-park.jpg"
+                            alt="Sender Avatar">
+                        <div class="transaction__details transaction__details--left">
+                            <p class="transaction__name text-present-4-bold">Online Shop</p>
+                            <p class="transaction__category text-present-5">General</p>
+                        </div>
+                        <div class="transaction__details transaction__details--right">
+                            <p class="transaction__amount text-present-4-bold">-$15.00</p>
+                            <time class="transactoin__date text-present-5" datetime="2024-08-15">15 Aug 2024</time>
+                        </div>
+                    </li>
+                    <li class="transactions__list-item">
+                        <img class="transaction__avatar" src="../assets/images/avatars/serenity-spa-and-wellness.jpg"
+                            alt="Sender Avatar">
+                        <div class="transaction__details transaction__details--left">
+                            <p class="transaction__name text-present-4-bold">Bravo Zen Spa</p>
+                            <p class="transaction__category text-present-5">Personal Care</p>
+                        </div>
+                        <div class="transaction__details transaction__details--right">
+                            <p class="transaction__amount text-present-4-bold">-$25.00</p>
+                            <time class="transactoin__date text-present-5" datetime="2024-08-13">13 Aug 2024</time>
+                        </div>
+                    </li>
+                    <li class="transactions__list-item">
+                        <img class="transaction__avatar" src="../assets/images/avatars/liam-hughes.jpg"
+                            alt="Sender Avatar">
+                        <div class="transaction__details transaction__details--left">
+                            <p class="transaction__name text-present-4-bold">Liam Hughes</p>
+                            <p class="transaction__category text-present-5">General</p>
+                        </div>
+                        <div class="transaction__details transaction__details--right">
+                            <p class="transaction__amount text-present-4-bold">-$10.00</p>
+                            <time class="transactoin__date text-present-5" datetime="2024-08-05">5 Aug 2024</time>
+                        </div>
+                    </li>
+                    <li class="transactions__list-item">
+                        <img class="transaction__avatar" src="../assets/images/avatars/elevate-education.jpg"
+                            alt="Sender Avatar">
+                        <div class="transaction__details transaction__details--left">
+                            <p class="transaction__name text-present-4-bold">Alpha Analytics</p>
+                            <p class="transaction__category text-present-5">General</p>
+                        </div>
+                        <div class="transaction__details transaction__details--right">
+                            <p class="transaction__amount text-present-4-bold transaction__amount--positive">+$1,900.00
+                            </p>
+                            <time class="transactoin__date text-present-5" datetime="2024-08-03">3 Aug 2024</time>
+                        </div>
+                    </li>
+                    <li class="transactions__list-item">
+                        <img class="transaction__avatar" src="../assets/images/avatars/spark-electric-solutions.jpg"
+                            alt="Sender Avatar">
+                        <div class="transaction__details transaction__details--left">
+                            <p class="transaction__name text-present-4-bold">Charlie Electric Company</p>
+                            <p class="transaction__category text-present-5">Bills</p>
+                        </div>
+                        <div class="transaction__details transaction__details--right">
+                            <p class="transaction__amount text-present-4-bold">-$100.00</p>
+                            <time class="transactoin__date text-present-5" datetime="2024-08-01">1 Aug 2024</time>
+                        </div>
+                    </li>
+                </ul>
+                <table class="transactions__table">
+                    <thead>
+                        <tr>
+                            <th class="text-present-5">Recipient / Sender</th>
+                            <th class="text-present-5">Category</th>
+                            <th class="text-present-5">Transaction Date</th>
+                            <th class="text-present-5">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img class="transaction__avatar"
+                                    src="../assets/images/avatars/serenity-spa-and-wellness.jpg" alt="Sender Avatar">
+                                <p class="transaction__name text-present-4-bold">Bravo Zen Spa</p>
+                            </td>
+                            <td>
+                                <p class="transaction__category text-present-5">Personal Care</p>
+                            </td>
+                            <td>
+                                <time class="transactoin__date text-present-5" datetime="2024-08-29">29 Aug 2024</time>
+                            </td>
+                            <td>
+                                <p class="transaction__amount text-present-4-bold">-$25.00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="transaction__avatar" src="../assets/images/avatars/elevate-education.jpg"
+                                    alt="Sender Avatar">
+                                <p class="transaction__name text-present-4-bold">Alpha Analytics</p>
+                            </td>
+                            <td>
+                                <p class="transaction__category text-present-5">General</p>
+                            </td>
+                            <td>
+                                <time class="transactoin__date text-present-5" datetime="2024-08-27">27 Aug 2024</time>
+                            </td>
+                            <td>
+                                <p class="transaction__amount text-present-4-bold transaction__amount--positive">+$450.00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="transaction__avatar" src="../assets/images/avatars/pixel-playground.jpg"
+                                    alt="Sender Avatar">
+                                <p class="transaction__name text-present-4-bold">Echo Game Store</p>
+                            </td>
+                            <td>
+                                <p class="transaction__category text-present-5">Lifestyle</p>
+                            </td>
+                            <td>
+                                <time class="transactoin__date text-present-5" datetime="2024-08-22">22 Aug 2024</time>
+                            </td>
+                            <td>
+                                <p class="transaction__amount text-present-4-bold">-$21.50
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="transaction__avatar" src="../assets/images/avatars/emma-richardson.jpg"
+                                    alt="Sender Avatar">
+                                <p class="transaction__name text-present-4-bold">Food Merchant</p>
+                            </td>
+                            <td>
+                                <p class="transaction__category text-present-5">General</p>
+                            </td>
+                            <td>
+                                <time class="transactoin__date text-present-5" datetime="2024-08-20">20 Aug 2024</time>
+                            </td>
+                            <td>
+                                <p class="transaction__amount text-present-4-bold">-$21.50</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="transaction__avatar" src="../assets/images/avatars/swift-ride-share.jpg"
+                                    alt="Sender Avatar">
+                                <p class="transaction__name text-present-4-bold">Delta Taxi</p>
+                            </td>
+                            <td>
+                                <p class="transaction__category text-present-5">Transportation</p>
+                            </td>
+                            <td>
+                                <time class="transactoin__date text-present-5" datetime="2024-08-19">19 Aug 2024</time>
+                            </td>
+                            <td>
+                                <p class="transaction__amount text-present-4-bold">-$15.00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="transaction__avatar" src="../assets/images/avatars/sun-park.jpg"
+                                    alt="Sender Avatar">
+                                <p class="transaction__name text-present-4-bold">Online Shop</p>
+                            </td>
+                            <td>
+                                <p class="transaction__category text-present-5">General</p>
+                            </td>
+                            <td>
+                                <time class="transactoin__date text-present-5" datetime="2024-08-15">15 Aug 2024</time>
+                            </td>
+                            <td>
+                                <p class="transaction__amount text-present-4-bold">-$15.00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="transaction__avatar"
+                                    src="../assets/images/avatars/serenity-spa-and-wellness.jpg" alt="Sender Avatar">
+                                <p class="transaction__name text-present-4-bold">Bravo Zen Spa</p>
+                            </td>
+                            <td>
+                                <p class="transaction__category text-present-5">Personal Care</p>
+                            </td>
+                            <td>
+                                <time class="transactoin__date text-present-5" datetime="2024-08-13">13 Aug 2024</time>
+                            </td>
+                            <td>
+                                <p class="transaction__amount text-present-4-bold">-$25.00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="transaction__avatar" src="../assets/images/avatars/liam-hughes.jpg"
+                                    alt="Sender Avatar">
+                                <p class="transaction__name text-present-4-bold">Liam Hughes</p>
+                            </td>
+                            <td>
+                                <p class="transaction__category text-present-5">General</p>
+                            </td>
+                            <td>
+                                <time class="transactoin__date text-present-5" datetime="2024-08-05">5 Aug 2024</time>
+                            </td>
+                            <td>
+                                <p class="transaction__amount text-present-4-bold">-$10.00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="transaction__avatar" src="../assets/images/avatars/elevate-education.jpg"
+                                    alt="Sender Avatar">
+                                <p class="transaction__name text-present-4-bold">Alpha Analytics</p>
+                            </td>
+                            <td>
+                                <p class="transaction__category text-present-5">General</p>
+                            </td>
+                            <td>
+                                <time class="transactoin__date text-present-5" datetime="2024-08-03">3 Aug 2024</time>
+                            </td>
+                            <td>
+                                <p class="transaction__amount text-present-4-bold transaction__amount--positive">
+                                    +$1,900.00
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="transaction__avatar"
+                                    src="../assets/images/avatars/spark-electric-solutions.jpg" alt="Sender Avatar">
+                                <p class="transaction__name text-present-4-bold">Charlie Electric Company</p>
+                            </td>
+                            <td>
+                                <p class="transaction__category text-present-5">Bills</p>
+                            </td>
+                            <td>
+                                <time class="transactoin__date text-present-5" datetime="2024-08-01">1 Aug 2024</time>
+                            </td>
+                            <td>
+                                <p class="transaction__amount text-present-4-bold">-$100.00</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="transactions__footer">
+                <ul class="transactions__pagination">
+                    <li class="transactions__pagination-link transactions__pagination-link--prev text-present-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"
+                            fill="currentColor"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path
+                                d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z" />
+                        </svg>
+                        <span>Prev</span>
+                    </li>
+                    <li class="transactions__pagination-link text-present-4 transactions__pagination-link--active">1
+                    </li>
+                    <li class="transactions__pagination-link text-present-4">2</li>
+                    <li class="transactions__pagination-link transactions__pagination-link--dots text-present-4">...
+                    </li>
+                    <li class="transactions__pagination-link text-present-4">3</li>
+                    <li class="transactions__pagination-link text-present-4">4</li>
+                    <li class="transactions__pagination-link text-present-4">5</li>
+                    <li class="transactions__pagination-link transactions__pagination-link--next text-present-4">
+                        <span>Next</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"
+                            fill="currentColor"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path
+                                d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>

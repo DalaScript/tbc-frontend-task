@@ -1,0 +1,328 @@
+/* || Transactions
+ *************************/
+
+/* || Transactions Header
+ *************************/
+.transactions__header {
+    margin-bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* || Transactions Search
+ *************************/
+.transactions__search {
+    /* width: 215px; */
+    width: 100%;
+    height: 45px;
+
+    display: block;
+
+    position: relative;
+}
+
+/* || Transactions Search Input
+ *************************/
+.transactions__search-input {
+    padding: 12px 36px 12px 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-base);
+    background-color: var(--unit-bg);
+
+    color: var(--primary-base);
+}
+
+.transactions__search-input:focus {
+    outline: none;
+}
+
+.transactions__search-input::placeholder {
+    color: var(--secondary-base);
+}
+
+/* || Transactions Search
+ *************************/
+.transactions__search-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--primary-base);
+
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+}
+
+/* || Transactions Sort Wrapper
+ *************************/
+.transactions__sort-wrapper {
+    display: flex;
+    gap: 24px;
+}
+
+/* || Transactions Selects
+ *************************/
+.transactions__select-wrapper {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: flex;
+}
+
+.transactions__select {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    opacity: 0;
+}
+
+.transactions__select option {
+    font-family: 'Public Sans', sans-serif;
+    background-color: var(--unit-bg);
+    color: var(--primary-base);
+}
+
+.transactions__select option:checked {
+    font-weight: 700;
+}
+
+.transactions__select-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-base);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.transactions__select-icon--sort-by {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* || Transactions Body
+ *************************/
+.transactions__body {
+    margin: 24px 0;
+}
+
+.transactions__list-item {
+    margin-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--stroke);
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.transactions__list-item:first-child {
+    margin-top: 0;
+}
+
+.transactions__list-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.transaction__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.transaction__details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.transaction__details--left {
+    margin-left: 12px;
+    align-items: flex-start;
+}
+
+.transaction__details--right {
+    margin-left: auto;
+    align-items: flex-end;
+}
+
+.transaction__name {
+    color: var(--primary-base);
+}
+
+.transaction__category {
+    color: var(--secondary-base);
+}
+
+.transaction__amount {
+    color: var(--primary-base);
+}
+
+.transaction__amount--positive {
+    color: var(--success);
+}
+
+.transactoin__date {
+    color: var(--secondary-base);
+}
+
+/* || Transactions Pagination
+ *************************/
+.transactions__pagination {
+    padding-top: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.transactions__pagination-link {
+    border: 1px solid var(--stroke);
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--secondary-base);
+}
+
+.transactions__pagination-link--active {
+    color: var(--unit-bg);
+    background-color: var(--primary-base);
+}
+
+.transactions__pagination-link:nth-child(5),
+.transactions__pagination-link:nth-child(6) {
+    display: none;
+}
+
+.transactions__pagination-link--prev {
+    margin-right: auto;
+}
+
+.transactions__pagination-link--next {
+    margin-left: auto;
+}
+
+.transactions__pagination-link--prev,
+.transactions__pagination-link--next {
+    width: 48px;
+}
+
+.transactions__pagination-link--prev span,
+.transactions__pagination-link--next span {
+    display: none;
+}
+
+.transactions__pagination-link--prev svg,
+.transactions__pagination-link--next svg {
+    width: 11px;
+    color: var(--secondary-base);
+}
+
+.transactions__select-label {
+    display: none;
+    pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .transactions__for-mobile {
+        display: none;
+    }
+
+    .transactions__pagination-link--prev,
+    .transactions__pagination-link--next {
+        width: 94px;
+    }
+
+    .transactions__pagination-link--prev span,
+    .transactions__pagination-link--next span {
+        display: inline;
+    }
+
+    .transactions__pagination-link--prev svg {
+        margin-right: 21px;
+    }
+
+    .transactions__pagination-link--next svg {
+        margin-left: 21px;
+    }
+
+    .transaction__avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .transaction__amount {
+        text-align: right;
+    }
+
+    .transactions__sort-wrapper {
+        min-width: 446px;
+        gap: 24px;
+    }
+
+    .transactions__select-wrapper {
+        min-width: 169px;
+        height: 45px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .transactions__select-label {
+        display: block;
+        pointer-events: auto;
+        color: var(--secondary-base);
+    }
+
+    .transactions__select--by {
+        min-width: 113px;
+        width: 113px;
+        height: 100%;
+    }
+
+    .transactions__select {
+        border: 1px solid var(--stroke);
+        border-radius: 8px;
+        opacity: 1;
+        text-align: center;
+        color: var(--primary-base);
+    }
+
+    .transactions__select--category {
+        min-width: 177px;
+        width: 177px;
+    }
+
+    .transactions__select-icon {
+        display: none;
+    }
+
+    .transactions__pagination-link--dots {
+        display: none;
+    }
+
+    .transactions__pagination-link:nth-child(5),
+    .transactions__pagination-link:nth-child(6) {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .transactions__search-input {
+        width: 320px;
+    }
+}
