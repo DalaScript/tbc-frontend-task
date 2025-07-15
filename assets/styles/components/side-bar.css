@@ -1,0 +1,242 @@
+/* || Side Bar
+ *************************/
+.side-bar {
+    padding: 90px 24px 210px 0;
+    width: 270px;
+    height: 100vh;
+    border-radius: 0 16px 16px 0;
+    background-color: var(--unit-bg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: -100%;
+
+    /* transition: left .3s ease-in-out; */
+    z-index: 99;
+}
+
+/* || Side Bar Icons
+ *************************/
+.side-bar__icon {
+    width: 22px;
+}
+
+.side-bar__hamburger,
+.side-bar__close {
+    display: flex;
+}
+
+.side-bar__close {
+    position: absolute;
+    top: 40px;
+    left: 32px;
+}
+
+.side-bar__hamburger .side-bar__icon,
+.side-bar__close .side-bar__icon {
+    color: var(--primary-base);
+}
+
+/* || Overlay
+ *************************/
+.side-bar__overlay {
+    opacity: 0;
+    pointer-events: none;
+
+    background-color: var(--primary-base);
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 99;
+}
+
+/* || Side Bar Logo
+ *************************/
+.side-bar__logo {
+    padding-top: 40px;
+    padding-left: 32px;
+    width: 100%;
+    height: 100px;
+}
+
+.side-bar__logo svg {
+    color: var(--primary-base);
+}
+
+.side-bar__logo--small {
+    display: none;
+}
+
+/* || Side Bar List Item
+ *************************/
+.side-bar__list-item {
+    margin-bottom: 4px;
+}
+
+/* || Side Bar List Item's Child Elements
+ *************************/
+.side-bar__item {
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--secondary-base);
+    white-space: nowrap;
+}
+
+.side-bar__item--active {
+    border-left: 4px solid var(--blue);
+    border-radius: 0 12px 12px 0;
+    background-color: var(--bg);
+    color: var(--primary-base);
+}
+
+.side-bar__item .side-bar__icon {
+    margin: 0 22px;
+}
+
+.side-bar__item--active .side-bar__icon {
+    color: var(--blue);
+    margin: 0 22px 0 18px;
+}
+
+.side-bar__item--minimize {
+    display: none;
+    pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* || Side Bar
+     *************************/
+    .side-bar {
+        width: 290px;
+    }
+
+    /* || Side Bar Logo
+     *************************/
+    .side-bar__logo {
+        margin-bottom: 24px;
+    }
+
+    /* || Side Bar Icons
+     *************************/
+    .side-bar__item .side-bar__icon {
+        margin: 0 28px;
+    }
+
+    .side-bar__item--active .side-bar__icon {
+        margin: 0 28px 0 24px;
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+
+    /* || Side Bar
+     *************************/
+    .side-bar {
+        width: 390px;
+    }
+
+    /* || Side Bar Icons
+     *************************/
+    .side-bar__item .side-bar__icon {
+        margin: 0 30px;
+    }
+
+    .side-bar__item--active .side-bar__icon {
+        margin: 0 30px 0 26px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    /* || Side Bar
+     *************************/
+    .side-bar {
+        padding-top: 0;
+        width: 300px;
+        background-color: var(--unit-bg);
+        left: 0;
+        overflow: hidden;
+    }
+
+    /* || Side Bar Icons
+     *************************/
+    .side-bar__hamburger,
+    .side-bar__close {
+        display: none;
+    }
+
+    .side-bar__icon {
+        width: 24px;
+        min-width: 24px;
+    }
+
+    .side-bar__item .side-bar__icon {
+        margin: 0 36px;
+    }
+
+    .side-bar__item--active .side-bar__icon {
+        margin: 0 36px 0 32px;
+    }
+
+    .side-bar__logo {
+        padding-left: 0;
+        position: relative;
+    }
+
+    .side-bar__logo--small {
+        display: inline;
+        right: -999px;
+        transform: translateX(50%);
+    }
+
+    .side-bar__logo--large {
+        left: 36px;
+    }
+
+    .side-bar__logo--small,
+    .side-bar__logo--large {
+        position: absolute;
+    }
+
+    /* || Side Bar Overlay
+     *************************/
+    .side-bar__overlay {
+        display: none;
+    }
+
+    /* || Side Bar Minimize Item
+     *************************/
+    .side-bar__item--minimize {
+        display: flex;
+        pointer-events: auto;
+    }
+
+    .side-bar__item--minimize .side-bar__icon {
+        transform: rotate(-180deg);
+    }
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+    .side-bar__hamburger,
+    .side-bar__close {
+        cursor: pointer;
+    }
+
+    .side-bar__item {
+        cursor: pointer;
+    }
+
+    .side-bar__item:hover {
+        color: var(--primary-base);
+    }
+}
