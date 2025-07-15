@@ -1,0 +1,68 @@
+/* || Nav Bar
+ *************************/
+.nav-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* || Title
+ *************************/
+.nav-bar__title {
+    color: var(--primary-base);
+}
+
+/* || User
+ *************************/
+.nav-bar__user-details {
+    display: none;
+}
+
+.nav-bar__user-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* || User
+     *************************/
+    .nav-bar__user {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .nav-bar__user-details {
+        display: block;
+    }
+
+    .nav-bar__user-name {
+        color: var(--primary-base);
+    }
+
+    .nav-bar__user-email {
+        margin-top: 1px;
+        color: var(--secondary-base);
+    }
+
+    .nav-bar__user-img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    /* || User
+     *************************/
+    .nav-bar__user-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav-bar__user-email {
+        margin-top: 5px;
+    }
+}
