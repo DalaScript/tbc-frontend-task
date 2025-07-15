@@ -1,0 +1,29 @@
+/* || Side Bar Open/Close Toggle
+ *************************/
+#side-bar-toggle:checked~.side-bar {
+    left: 0;
+}
+
+#side-bar-toggle:checked~.side-bar__overlay {
+    opacity: .25;
+    pointer-events: auto;
+}
+
+body:has(#side-bar-toggle:checked) {
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 1440px) {
+    #side-bar-toggle:checked~.side-bar {
+        left: 0;
+    }
+
+    #side-bar-toggle:checked~.side-bar__overlay {
+        opacity: .25;
+        pointer-events: auto;
+    }
+
+    body:has(#side-bar-toggle:checked) {
+        overflow: hidden;
+    }
+}
