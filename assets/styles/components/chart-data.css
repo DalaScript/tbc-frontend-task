@@ -1,0 +1,63 @@
+/* || Data
+ *************************/
+.data {
+    width: 100%;
+}
+
+.data__cards-list {
+    width: 100%;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: auto auto;
+}
+
+/* || Data Card
+ *************************/
+.data-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.data-card__horizontal-line {
+    width: 4px;
+    height: 43px;
+    border-radius: 8px;
+}
+
+.data-card__horizontal-line--entertainment {
+    background-color: var(--green);
+}
+
+.data-card__horizontal-line--bills {
+    background-color: var(--blue);
+}
+
+.data-card__horizontal-line--dining-out {
+    background-color: var(--yellow);
+}
+
+.data-card__horizontal-line--personal-care {
+    background-color: var(--salmon);
+}
+
+.data-card__title {
+    color: var(--secondary-base);
+}
+
+.data-card__value {
+    margin-top: 4px;
+    color: var(--primary-base);
+}
+
+@media only screen and (min-width: 768px) {
+    /* || Data
+     *************************/
+    .data {
+        width: 100px;
+    }
+
+    .data__cards-list {
+        grid-template-columns: auto;
+    }
+}
