@@ -322,7 +322,29 @@
 }
 
 @media only screen and (min-width: 1440px) {
-    .transactions__search-input {
+    .transactions__header {
+        justify-content: space-between;
+    }
+
+    .transactions__search {
         width: 320px;
+    }
+}
+@media (hover: hover) and (pointer: fine) {
+    .transactions__search-input,
+    .transactions__search-icon,
+    .transactions__select-label,
+    .transactions__select,
+    .transactions__pagination-link {
+        cursor: pointer;
+    }
+    
+    .transactions__pagination-link:not(.transactions__pagination-link--active):hover {
+        background-color: var(--secondary-base);
+        color: var(--unit-bg);
+    }
+
+    .transactions__pagination-link:hover svg {
+        color: var(--unit-bg);
     }
 }
